@@ -13,7 +13,8 @@
     var chat = new Chat(socket);
     var chatUI = new ChatUI(chat);
     $('form').submit(chatUI.getMessage.bind(chatUI));
-    chat.socket.on('sent-msg', chatUI.receiveMessage.bind(chatUI));  
+    chat.socket.on('sent-msg', chatUI.receiveMessage.bind(chatUI)); 
+    chat.socket.on('exit', chatUI.exit.bind(chatUI))
   })
   </script>
 </head>
