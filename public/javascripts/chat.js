@@ -11,4 +11,10 @@
     this.socket.emit("change-nickname", { username: newName })
   }
   
+  Chat.prototype.joinRoom = function(value){
+    this.socket.emit("joinRoom", { roomName: value })
+  }
+  
+
+  
 })(window);
