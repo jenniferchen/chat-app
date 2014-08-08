@@ -2,6 +2,7 @@
   
   var ChatUI = root.ChatUI = function(chat){
     this.chat = chat;
+    this.messageCount = 0;
   };
 
   ChatUI.prototype.getMessage = function(event){
@@ -12,14 +13,18 @@
     } else {
       this.chat.sendMessage(message);      
     }
+    $('form')[0].reset();
   };
   
   ChatUI.prototype.receiveMessage = function(data){
     var username = data.username;
     var message = data.message;
+    this.messageCount++;
     var $li = $('<li>');
+    $li.attr("id", this.messageCount);
     $li.text(username + ": " + message);
     $('#sent-messages').append($li);
+    $('#message-box')[0].scrollTop = $('#message-box')[0].scrollHeight;
   };
   
   ChatUI.prototype.receiveID = function(data){
@@ -43,14 +48,14 @@
         break;
       case "join":
         this.chat.joinRoom(value);
+        $('.room-name').text(value);
         break;
       default:
         var $li = $('<li>');
         $li.text("Command not recognized");
         $('#sent-messages').append($li);
         break;
-    }
-    
+    }   
   };
   
   ChatUI.prototype.renderRoomList = function(data){

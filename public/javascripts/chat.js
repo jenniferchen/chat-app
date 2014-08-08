@@ -14,7 +14,4 @@
   Chat.prototype.joinRoom = function(value){
     this.socket.emit("joinRoom", { roomName: value })
   }
-  
-
-  
 })(window);

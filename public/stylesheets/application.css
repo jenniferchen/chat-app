@@ -1,4 +1,16 @@
-.message-box, .roomlist {
-  height: 200px;
+.panel {
+  height: 500px;
+}
+
+.panel {
+  height: 500px;
+}
+
+.panel-heading, .panel-footer {
+  height: 49px;
+}
+
+.panel-body {
+  height: 400px;
   overflow-y: auto;
 }

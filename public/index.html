@@ -21,31 +21,49 @@
   })
   </script>
 </head>
+
 <body>
   <div class="container">
-    <h1> Messages </h1>
+    <h1>Chat App</h1>
+    <br>
     <div class="row">
-
-      <!-- <div > -->
-        
-        <ul class="message-box col-xs-8 list-group" id = "sent-messages">
-        </ul>
-      <!-- </div> -->
-    
-      <ul class="roomlist col-xs-4 list-group">
-      </ul>
-    
-    </div>
-  
-    <div class="row">
-      <form>
-        <div class="input-group col-xs-8">
-          <input type="text" class="form-control">
-          <span class="input-group-btn">
-            <input type="submit" class="btn btn-default" value="Send">
-          </span>
+      <div class="col-xs-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="room-name">Lobby</h4>
+          </div>
+          <div class="panel-body" id="message-box">
+            <ul class="list-unstyled" id = "sent-messages">
+            </ul>
+          </div>
+          <div class="panel-footer">
+            <form>
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                  <input type="submit" class="btn btn-default" value="Send">
+                </span>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+        <h4>Commands</h4>
+        <p><strong>/name</strong> Change nickname (ex. entering "/name jack" will change your nickname to "jack")</p>
+        <p><strong>/join</strong> Change chatroom (ex. entering "/join nodedevs" will take you to the room called "nodedevs")</p>
+      </div>
+
+      <div class="col-xs-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Rooms</h4>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled roomlist">
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
